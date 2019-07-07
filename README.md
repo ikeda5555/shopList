@@ -1,2 +1,2 @@
 # shopList
-node.js and pueppeteer exercises
+node.js and puppeteer exercises
