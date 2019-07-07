@@ -9,8 +9,8 @@ createFiles();
 
   var classAreas = await page.$$(".shopLink");
   for(var areaCount = await 0; areaCount < await classAreas.length; await areaCount++) {
+  
     var liPrefectures = await getLiPrefectures(classAreas[areaCount]);
-
     for(var prefectureCount = await 0; prefectureCount < await liPrefectures.length; await prefectureCount++) {
       await page.goto(await getLinkToPrefecture(await liPrefectures[prefectureCount]));
     
