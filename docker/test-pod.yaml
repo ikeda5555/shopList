@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: my-nginx-pod
+spec:
+  # コンテナの定義
+  containers:
+  - name: nginx
+    image: nginx
+    ports:
+    - containerPort: 80
+    # マウントするディレクトリを指定
+    volumeMounts:
+    - mountPath: "/usr/share/nginx/html"
+      name: mydata
+  volumes:
+    - name: mydata
+      # マウント対象となる Persistent Volume に対応する
+      # Persistent Volume Claimを指定
+      persistentVolumeClaim:
+        claimName: nfs-claim1
